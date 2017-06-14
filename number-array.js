@@ -5,7 +5,7 @@
  * @param {number} n
  * @returns {Array.<number>}
  */
-let complement = (a, n) => new Array(n).fill(0).concat(a);
+let padWithZeros = (a, n) => new Array(n).fill(0).concat(a);
 
 /**
  * Complement the shorter of the operands with zeros.
@@ -14,11 +14,11 @@ let complement = (a, n) => new Array(n).fill(0).concat(a);
  * @param {Array.<number>} b
  * @returns {[*,*]}
  */
-function complementOperands(a, b) {
+function padOperandsWithZeros(a, b) {
     if (a.length < b.length) {
-        a = complement(a, b.length - a.length);
+        a = padWithZeros(a, b.length - a.length);
     } else if (b.length < a.length) {
-        b = complement(b, a.length - b.length);
+        b = padWithZeros(b, a.length - b.length);
     }
     return [a, b];
 }
@@ -62,7 +62,7 @@ let bPow = n => '1' + '0'.repeat(n);
 function sum(a, b) {
     let tmp = 0,
         result = [];
-    [a, b] = complementOperands(a, b);
+    [a, b] = padOperandsWithZeros(a, b);
     for (let i = a.length - 1; i >= 0; i--) {
         let x = Number(a[i]) + Number(b[i]) + tmp;
         if (x >= 10) {
@@ -88,7 +88,7 @@ function sum(a, b) {
  */
 function sub(a, b) {
     [a, b] = a.length >= b.length ? [a, b] : [b, a];
-    [a, b] = complementOperands(a, b);
+    [a, b] = padOperandsWithZeros(a, b);
     let result = [],
         n = a.length;
     for (let i = n - 1; i >= 0; i--) {
