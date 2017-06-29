@@ -21,6 +21,6 @@ true
 https://en.wikipedia.org/wiki/Karger%27s_algorithm
 https://github.com/leonbobster/algorithms/blob/master/kargers_mincut.php
 
-### Counting of comparations (QuickSort) in PHP
+### Counting of comparisons (QuickSort) in PHP.
 
 https://github.com/leonbobster/algorithms/blob/master/quick_sort_comparisons.php
